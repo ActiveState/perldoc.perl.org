@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>[% pagename %] - [% site_title %]</title>
+  <title>default.tt: [% pagename %] - [% site_title %]</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta http-equiv="Content-Language" content="en-gb">
   <link rel="search" type="application/opensearchdescription+xml" title="Search perldoc.perl.org" href="/static/search.xml"/>
@@ -10,91 +10,13 @@
   <link href="[% IF download %][% path %][% ELSE %]/[% END %]static/exploreperl.css" rel="stylesheet" rev="stylesheet" type="text/css">
 </head>
 
-<body onLoad="perldoc.startup();" onPageShow="if (event.persisted) perldoc.startup();">
+<body>
     <div id="page">
       
       <div id="header">
-	<div id="homepage_link">
-	  <a href="[% path %]index.html"></a>
-	</div>
-	<div id="strapline">
-	  Perl Programming Documentation
-	</div>
-	<div id="download_link" class="download">
-	  <a href="http://www.perl.org/get.html">Download Perl</a>
-	</div>
-	<div id="explore_link" class="download">
-	  <a id="explore_anchor" href="#">Explore</a>
-	</div>
       </div>
       
       <div id="body">
-        <div id="left_column">
-          <div class="side_group">
-            [% UNLESS download %]
-	      <div class="side_panel doc_panel">
-		<p>Perl version</p>
-		<script language="JavaScript" type="text/javascript" src="/static/perlversion.js"></script>
-		<ul>
-		  <li><a href="[% path %]preferences.html">Preferences</a>
-		</ul>
-	      </div>
-            [% END %]
-	    <div class="side_panel doc_panel">
-              <p>Manual</p>
-              <ul>
-                <li><a href="[% path %]index-overview.html">Overview</a>
-                <li><a href="[% path %]index-tutorials.html">Tutorials</a>
-                <li><a href="[% path %]index-faq.html">FAQs</a>
-                <li><a href="[% path %]index-history.html">History / Changes</a>
-                <li><a href="[% path %]index-licence.html">License</a>
-              </ul>
-            </div>
-            <div class="side_panel doc_panel">
-              <p>Reference</p>
-              <ul>
-                <li><a href="[% path %]index-language.html">Language</a>
-                <li><a href="[% path %]index-functions.html">Functions</a>
-                <li><a href="[% path %]perlop.html">Operators</a>
-                <li><a href="[% path %]perlvar.html">Special Variables</a>
-                <li><a href="[% path %]index-pragmas.html">Pragmas</a>
-                <li><a href="[% path %]index-utilities.html">Utilities</a>
-                <li><a href="[% path %]index-internals.html">Internals</a>
-                <li><a href="[% path %]index-platforms.html">Platform Specific</a>
-              </ul>
-            </div>
-            <div class="side_panel doc_panel">
-              <p>Modules</p>
-              <ul>
-		<li>
-		[% az_indexes = [] %]
-                [% FOREACH az IN module_az %]
-                  [% IF az.link %]
-		    [% az_indexes.push(az) %]
-		  [% END %]
-		[% END %]
-		[% FOREACH az IN az_indexes %]
-                    <a href="[% path %][% az.link %]">[% az.letter %]</a>
-                    [% UNLESS loop.last %]
-                      [% IF ((loop.count % 5) == 0) %]
-                        <li>
-                      [% ELSE %]
-                        &bull;
-                      [% END %]
-                    [% END %]
-                [% END %]
-              </ul>
-            </div>
-            [% IF download %]
-	      <div class="side_panel doc_panel">
-		<p>Tools</p>
-		<ul>
-		  <li><a href="[% path %]preferences.html">Preferences</a>
-		</ul>
-	      </div>
-            [% END %]
-          </div>
-        </div>
         <div id="centre_column">
           <div id="content_header">
             <div id="title_bar">
@@ -116,10 +38,6 @@
 		[% END %]
                 <a href="#" id="recent_pages_toggle">Show recent pages</a>		
 	      </div>
-	      <div id="search_form">
-		<form action="[% path %]search.html" method="GET" id="search">
-		  <input type="text" name="q" id="search_box" alt="Search">
-		</form>
 	      </div>
             </div>
             <div id="breadcrumbs">
@@ -128,26 +46,11 @@
           </div>
           <div id="content_body">
 
-	    <div id="recent_pages" class="hud_container">
-	      <div id="recent_pages_header" class="hud_header">
-		<div id="recent_pages_close" class="hud_close"><a href="#" onClick="recentPages.hide();return false;"></a></div>
-		<div id="recent_pages_title" class="hud_title"><span class="hud_span_top">Recently read</span></div>
-		<div id="recent_pages_topright" class="hud_topright"></div>
-	      </div>
-	      <div id="recent_pages_content" class="hud_content">
-	      </div>
-	      <div id="recent_pages_footer" class="hud_footer">
-		<div id="recent_pages_bottomleft" class="hud_bottomleft"></div>
-		<div id="recent_pages_bottom" class="hud_bottom"><span class="hud_span_bottom"></span></div>
-		<div id="recent_pages_resize" class="hud_resize"></div>
-	      </div>
 	    </div>
   
 	    <div id="from_search"></div>
             [% INCLUDE $content_tt %]
 	    &nbsp;
-          </div>
-          <div id="content_footer">
           </div>
         </div>
         <div class="clear"></div>
