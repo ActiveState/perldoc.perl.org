@@ -14,12 +14,11 @@
   pageDepth = {$pagedepth};
   setPath();
 </script>
-<body onLoad="showToolbars();loadLabels()">
+<body>
 
 
 <div id="pageBody">
       <div id="breadCrumbs">{$breadcrumb}</div>
-      <script language="JavaScript">fromSearch();</script>
       <div id="contentBody">{$content}</div>
 </div>
 </body>
