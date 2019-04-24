@@ -35,8 +35,6 @@
   perldoc.pageName    = '[% pagename %]';
   perldoc.pageAddress = '[% pageaddress %]';
   perldoc.contentPage = [% contentpage or 0 %];
-  explorePerl.render();
-  explorePerl.addEvents('explore_anchor');
 </script>
 
   </body>
