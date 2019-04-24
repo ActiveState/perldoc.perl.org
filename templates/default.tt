@@ -250,19 +250,5 @@ Explorer 8</a>
   explorePerl.render();
   explorePerl.addEvents('explore_anchor');
 </script>
-    [% UNLESS download %]
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTrackerJJ = _gat._getTracker("UA-1892152-2");
-pageTrackerJJ._initData();
-pageTrackerJJ._trackPageview();
-var pageTrackerRobert = _gat._getTracker("UA-50555-3");
-pageTrackerRobert._initData();
-pageTrackerRobert._trackPageview();
-</script>
-    [% END %]
   </body>
 </html>
