@@ -4,42 +4,14 @@
 <head>
   <title>default.tt: [% pagename %] - [% site_title %]</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta http-equiv="Content-Language" content="en-gb">
-  <link rel="search" type="application/opensearchdescription+xml" title="Search perldoc.perl.org" href="/static/search.xml"/>
+  <meta http-equiv="Content-Language" content="en-us">
   <link href="[% IF download %][% path %][% ELSE %]/[% END %]static/css-20100830.css" rel="stylesheet" rev="stylesheet" type="text/css" media="screen">
   <link href="[% IF download %][% path %][% ELSE %]/[% END %]static/exploreperl.css" rel="stylesheet" rev="stylesheet" type="text/css">
 </head>
-
 <body>
     <div id="page">
-      
-      <div id="header">
-      </div>
-      
       <div id="body">
         <div id="centre_column">
-          <div id="content_header">
-            <div id="title_bar">
-              <div id="page_name">
-                <h1>[% pagename %]</h1>
-              </div>
-              <div id="perl_version">
-                Perl 5 version [% perl5_version %] documentation
-              </div>
-              <div class="page_links" id="page_links_top">
-                <a href="#" onClick="toolbar.goToTop();return false;">Go to top</a>
-		[% IF (pdf && pdf_link) %]
-                  &bull; <a href="[% path %][% pdf_link %]">Download PDF</a>
-		[% END %]
-              </div>
-	      <div class="page_links" id="page_links_bottom">
-		[% IF page_index %]
-                  <a href="#" id="page_index_toggle">Show page index</a> &bull;
-		[% END %]
-                <a href="#" id="recent_pages_toggle">Show recent pages</a>		
-	      </div>
-	      </div>
-            </div>
             <div id="breadcrumbs">
               [% INCLUDE breadcrumb.tt %]
             </div>
@@ -47,8 +19,6 @@
           <div id="content_body">
 
 	    </div>
-  
-	    <div id="from_search"></div>
             [% INCLUDE $content_tt %]
 	    &nbsp;
           </div>
